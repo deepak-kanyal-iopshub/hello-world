@@ -1,4 +1,3 @@
-
 pipeline {
     agent any
     
@@ -12,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Login to Docker registry
-                    docker.withRegistry('https://${env.DOCKER_REGISTRY}', 'docker-registry-credentials') {
+                    docker.withRegistry('https://${DOCKER_REGISTRY}', 'docker-registry-credentials') {
                         // Build Docker image from Dockerfile
                         def customImage = docker.build("your-docker-image-name")
                         
@@ -28,8 +27,8 @@ pipeline {
                 // Execute Ansible playbook
                 ansiblePlaybook(
                     credentialsId: 'ansible-ssh-credentials',  // SSH credentials for Ansible
-                    inventory: "${env.ANSIBLE_HOST},",
-                    playbook: 'path/to/ansible/playbook.yml'
+                    inventory: "${ANSIBLE_HOST},",
+                    playbook: 'path/to/ansible/playbook.yml'  // Update path to your playbook
                 )
             }
         }
