@@ -7,6 +7,15 @@ pipeline {
     }
     
     stages {
+        stage('Checkout') {
+            steps {
+                script {
+                    // Checkout specific branch
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/your-username/your-repo.git']]])
+                }
+            }
+        }
+        
         stage('Build and Push Docker Image') {
             steps {
                 script {
