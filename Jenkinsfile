@@ -11,7 +11,7 @@ pipeline {
             steps {
                 script {
                     // Checkout specific branch
-                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/your-username/your-repo.git']]])
+                    checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/deepak-kanyal-iopshub/hello-world.git']]])
                 }
             }
         }
