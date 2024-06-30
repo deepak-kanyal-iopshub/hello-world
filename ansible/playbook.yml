@@ -1,1 +1,16 @@
+# playbook.yml
+- hosts: all
+  become: yes
+  tasks:
+    - name: Install Docker and Docker Compose
+      include_role:
+        name: docker_setup
+    
+    - name: Remove instance from load balancer
+      # Task to remove the instance from load balancer goes here
+      
+    - name: Deploy Docker container
+      template:
+        src: docker-compose.yml.j2
+        dest: /path/to/remote/docker-compose.yml
 
