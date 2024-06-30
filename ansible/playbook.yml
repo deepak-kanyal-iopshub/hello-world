@@ -11,6 +11,6 @@
       
     - name: Deploy Docker container
       template:
-        src: docker-compose.yml.j2
+        src: docker-compose.yml
         dest: /path/to/remote/docker-compose.yml
 
