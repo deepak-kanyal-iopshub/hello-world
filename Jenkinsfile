@@ -2,8 +2,8 @@ pipeline {
     agent any
     
     environment {
-        DOCKER_REGISTRY = "nexus"  // Update with your Docker registry URL
-        ANSIBLE_HOST = "inventroy"  // Update with your Ansible host
+        DOCKER_REGISTRY = "nexus" 
+        ANSIBLE_HOST = "inventroy"  
     }
     
     stages {
